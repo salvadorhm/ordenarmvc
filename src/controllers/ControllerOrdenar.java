@@ -15,12 +15,12 @@ import views.ViewOrdenar;
  */
 public class ControllerOrdenar {
     
-    ModelOrdenar modelAscendente;
+    ModelOrdenar modelOrdenar;
     ViewOrdenar viewOrdenar;
     DefaultListModel<String> valores = new DefaultListModel<>();
     
     public ControllerOrdenar(ModelOrdenar modelAscendente, ViewOrdenar viewAscendente){
-        this.modelAscendente = modelAscendente;
+        this.modelOrdenar = modelAscendente;
         this.viewOrdenar = viewAscendente;
         this.viewOrdenar.jbtn_agregar.addActionListener(e -> jtbn_agregar_clic());
         this.viewOrdenar.jbtn_ascendente.addActionListener(e -> jtbn_ascendente_clic());
@@ -35,14 +35,14 @@ public class ControllerOrdenar {
     }
 
     private void jtbn_ascendente_clic() {
-        modelAscendente.setValores(valores);
-        modelAscendente.ordernarAscendente();
-        valores = modelAscendente.getValores();
+        modelOrdenar.setValores(valores);
+        modelOrdenar.ordernarAscendente();
+        valores = modelOrdenar.getValores();
     }
 
     private void jtbn_descendente_clic() {
-        modelAscendente.setValores(valores);
-        modelAscendente.ordernarDescendente();
-        valores = modelAscendente.getValores();
+        modelOrdenar.setValores(valores);
+        modelOrdenar.ordernarDescendente();
+        valores = modelOrdenar.getValores();
     }
 }
