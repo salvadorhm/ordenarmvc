@@ -23,7 +23,7 @@ public class Main {
     private static ModelOrdenar modelOrdenar;
     private static ModelMain modelMain;
     
-    private static ViewOrdenar viewAscendente;
+    private static ViewOrdenar viewOrdenar;
     private static ViewMain viewMain;
     
     private static ControllerOrdenar controllerOrdenar;
@@ -34,11 +34,11 @@ public class Main {
      */
     public static void main(String[] args) {
         modelOrdenar = new ModelOrdenar();
-        viewAscendente = new ViewOrdenar();
-        controllerOrdenar = new ControllerOrdenar(modelOrdenar, viewAscendente);
+        viewOrdenar = new ViewOrdenar();
+        controllerOrdenar = new ControllerOrdenar(modelOrdenar, viewOrdenar);
         
         modelMain = new ModelMain();
         viewMain = new ViewMain();
-        controllerMain = new ControllerMain(modelMain, viewMain, viewAscendente);
+        controllerMain = new ControllerMain(modelMain, viewMain, viewOrdenar);
     }
 }
